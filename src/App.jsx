@@ -1,9 +1,11 @@
-
+import Home from "./pages/Home/Home"
 import './App.css'
 
 function App() {
   return (
-    <h1>NoteMaster</h1>
+    <div>
+      <Home />
+    </div>
   )
 }
 
