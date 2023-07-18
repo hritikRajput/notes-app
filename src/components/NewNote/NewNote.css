@@ -1,0 +1,36 @@
+.newnote{
+    /* border: 2px solid #101010; */
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 32px auto;
+    position: relative;
+}
+.newnote__title{
+    padding: 8px 16px;
+    font-size: 1.4rem;
+    border: none;
+    border-bottom: 1px solid gray;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.newnote__description{
+    padding: 8px 16px;
+    font-size: 1.2rem;
+    border: none;
+    resize: none;
+}
+.newnote__plus{
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+.newnote__plus:hover{
+    background: #cdcdcd;
+}
