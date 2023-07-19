@@ -1,10 +1,10 @@
 import React from "react"
 import "./NewNote.css"
 import plus from "../../assets/plus-solid.svg"
-export default function NewNote() {
-    const [title, setTitle] = React.useState("")
-    const [description, setDescription] = React.useState("")
+import { useNotes } from "../../context/notesContext"
 
+export default function NewNote() {
+    const { title, setTitle, description, setDescription, notes, setNotes } = useNotes()
     const handleTitleChange = (e) => {
         console.log(e.target)
         setTitle(e.target.value);

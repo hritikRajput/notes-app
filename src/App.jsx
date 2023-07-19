@@ -1,11 +1,15 @@
 import Home from "./pages/Home/Home"
 import './App.css'
+import { NotesProvider } from "./context/notesContext"
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <NotesProvider>
+      <div>
+        <Home />
+      </div>
+    </NotesProvider>
+
   )
 }
 
