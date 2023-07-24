@@ -3,13 +3,17 @@ import pinned from "../../assets/pinned.svg"
 import unpinned from "../../assets/unpinned.svg"
 import remove from "../../assets/trash.svg"
 import "./NoteCard.css"
+import { useNotes } from "../../context/notesContext"
 
 export default function NoteCard(props) {
-    const { title, description } = props
+    const { title, description, id } = props
+    const { notes, setNotes } = useNotes()
 
-
-    function handleDelete() {
-
+    function handleDelete(id) {
+        const filteredArray = notes.filter((note) => {
+            return note.id !== id;
+        })
+        setNotes(filteredArray)
     }
 
     return (
@@ -23,7 +27,7 @@ export default function NoteCard(props) {
             </div>
             <div className="notecard__options-row">
                 <span className="notecard__img"><img src={archive} /></span>
-                <span className="notecard__img" onClick={handleDelete}><img src={remove} /></span>
+                <span className="notecard__img"><img src={remove} onClick={() => handleDelete(id)} /></span>
             </div>
         </div>
     )

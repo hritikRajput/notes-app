@@ -10,7 +10,7 @@ export default function Home() {
       <Header />
       <NewNote />
       {
-        notes.map(note => <NoteCard title={note.title} description={note.description} />)
+        notes.map(note => <NoteCard title={note.title} description={note.description} id={note.id} />)
       }
     </div>
   );
