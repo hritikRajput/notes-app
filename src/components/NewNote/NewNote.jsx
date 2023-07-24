@@ -2,6 +2,7 @@ import React from "react"
 import "./NewNote.css"
 import plus from "../../assets/plus-solid.svg"
 import { useNotes } from "../../context/notesContext"
+import { v4 as uuid } from "uuid";
 
 export default function NewNote() {
     const { title, setTitle, description, setDescription, notes, setNotes } = useNotes()
@@ -13,7 +14,7 @@ export default function NewNote() {
     }
 
     const handleClick = () => {
-        console.log("Plus sign clicked")
+        setNotes([...notes, { id: uuid(), title, description }])
     }
 
 
