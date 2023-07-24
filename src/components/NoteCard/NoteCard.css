@@ -1,0 +1,31 @@
+.notecard{
+    border: 2px solid #101010;
+    border-radius: 4px;
+    padding: 8px;
+    width: 300px;
+}
+.notecard__title-row{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #101010;
+}
+.notecard__description-row{
+    padding: 8px 0;
+}
+.notecard__options-row{
+    display: flex;
+    justify-content: end;
+}
+
+
+.notecard__img img{
+    width: 25px;
+    margin-left: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.notecard__img img:hover{
+    transform: scale(1.1);
+}
+
