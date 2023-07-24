@@ -6,11 +6,9 @@ import { useNotes } from "../../context/notesContext"
 export default function NewNote() {
     const { title, setTitle, description, setDescription, notes, setNotes } = useNotes()
     const handleTitleChange = (e) => {
-        console.log(e.target)
         setTitle(e.target.value);
     }
     const handleDescriptionChange = (e) => {
-        console.log(e.target)
         setDescription(e.target.value)
     }
 
