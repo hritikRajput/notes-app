@@ -15,6 +15,8 @@ export default function NewNote() {
 
     const handleClick = () => {
         setNotes([...notes, { id: uuid(), title, description }])
+        setTitle("")
+        setDescription("")
     }
 
 
