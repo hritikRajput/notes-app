@@ -6,10 +6,11 @@ const NotesProvider = (props) => {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [notes, setNotes] = React.useState([]);
+  const [pinnedNotes, setPinnedNotes] = React.useState([]);
 
   return (
     <NotesContext.Provider
-      value={{ title, setTitle, description, setDescription, notes, setNotes }}
+      value={{ title, setTitle, description, setDescription, notes, setNotes, pinnedNotes, setPinnedNotes }}
     >
       {props.children}
     </NotesContext.Provider>
