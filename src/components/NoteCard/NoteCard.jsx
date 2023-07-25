@@ -8,7 +8,7 @@ import { useNotes } from "../../context/notesContext"
 
 export default function NoteCard(props) {
     const { title, description, id } = props
-    const { notes, setNotes, pinnedNotes, setPinnedNotes } = useNotes()
+    const { notes, setNotes, pinnedNotes, setPinnedNotes, archiveNotes, setArchiveNotes } = useNotes()
 
     function checkIsPinned(pinnedNotes, id) {
         return pinnedNotes.some(note => note.id === id)
@@ -28,8 +28,6 @@ export default function NoteCard(props) {
         })
         setNotes(filteredArray)
         setPinnedNotes([...pinnedNotes, { title, description, id }])
-        setIsPinned(true)
-        console.log(isPinned)
     }
     function handlePinned(id) {
         const filteredArray = pinnedNotes.filter((note) => {
@@ -37,8 +35,22 @@ export default function NoteCard(props) {
         })
         setPinnedNotes(filteredArray)
         setNotes([...notes, { title, description, id }])
-        setIsPinned(false)
-        console.log(isPinned)
+    }
+    function handleArchiveClick(id) {
+        if (isPinned) {
+            const filteredArray = pinnedNotes.filter((note) => {
+                return note.id !== id;
+            })
+            setPinnedNotes(filteredArray)
+            setArchiveNotes([...archiveNotes, { title, description, id }])
+        }
+        else {
+            const filteredArray = notes.filter((note) => {
+                return note.id !== id;
+            })
+            setNotes(filteredArray)
+            setArchiveNotes([...archiveNotes, { title, description, id }])
+        }
     }
 
 
@@ -52,7 +64,7 @@ export default function NoteCard(props) {
                 <p>{description}</p>
             </div>
             <div className="notecard__options-row">
-                <span className="notecard__img"><img src={archive} /></span>
+                <span className="notecard__img"><img src={archive} onClick={() => handleArchiveClick(id)} /></span>
                 <span className="notecard__img"><img src={remove} onClick={() => handleDelete(id)} /></span>
             </div>
         </div>
