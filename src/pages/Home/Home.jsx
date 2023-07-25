@@ -1,4 +1,5 @@
 import Header from "../../components/Header/Header";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import NewNote from "../../components/NewNote/NewNote";
 import NoteCard from "../../components/NoteCard/NoteCard";
 import { useNotes } from "../../context/notesContext"
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <div>
       <Header />
+      <Sidebar />
       <NewNote />
       <div>
         {pinnedNotes.length > 0 && <h2>Pinned Notes</h2>}
