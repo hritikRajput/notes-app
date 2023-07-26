@@ -9,7 +9,7 @@ import { useNotes } from "../../context/notesContext"
 
 export default function NoteCard(props) {
     const { title, description, id } = props
-    const { notes, setNotes, pinnedNotes, setPinnedNotes, archiveNotes, setArchiveNotes } = useNotes()
+    const { notes, setNotes, pinnedNotes, setPinnedNotes, archiveNotes, setArchiveNotes, importantNotes, setImportantNotes } = useNotes()
 
     function checkIsPinned(pinnedNotes, id) {
         return pinnedNotes.some(note => note.id === id)
@@ -20,6 +20,11 @@ export default function NoteCard(props) {
         return archiveNotes.some(note => note.id === id)
     }
     const isArchived = checkIsArchived(archiveNotes, id)
+
+    function checkIsImportant(importantNotes, id) {
+        return importantNotes.some(note => note.id === id)
+    }
+    const isImportant = checkIsImportant(importantNotes, id)
 
     function handleDelete(id) {
         if (isArchived) {
@@ -33,6 +38,12 @@ export default function NoteCard(props) {
                 return note.id !== id;
             })
             setPinnedNotes(filteredArray)
+        }
+        else if (isImportant) {
+            const filteredArray = importantNotes.filter((note) => {
+                return note.id !== id;
+            })
+            setImportantNotes(filteredArray)
         }
         else {
             const filteredArray = notes.filter((note) => {
@@ -78,13 +89,13 @@ export default function NoteCard(props) {
         <div className="notecard">
             <div className="notecard__title-row">
                 <h2>{title}</h2>
-                {!isArchived && <span className="notecard__img"><img src={isPinned ? pinned : unpinned} onClick={() => isPinned ? handlePinned(id) : handleUnPinned(id)} /></span>}
+                {(!isArchived && !isImportant) && <span className="notecard__img"><img src={isPinned ? pinned : unpinned} onClick={() => isPinned ? handlePinned(id) : handleUnPinned(id)} /></span>}
             </div>
             <div className="notecard__description-row">
                 <p>{description}</p>
             </div>
             <div className="notecard__options-row">
-                <span className="notecard__img"><img src={isArchived ? archive : unarchive} onClick={() => handleArchiveClick(id)} /></span>
+                {!isImportant && <span className="notecard__img"><img src={isArchived ? archive : unarchive} onClick={() => handleArchiveClick(id)} /></span>}
                 <span className="notecard__img"><img src={remove} onClick={() => handleDelete(id)} /></span>
             </div>
         </div>

@@ -6,7 +6,7 @@ export default function Sidebar() {
             <ul>
                 <Link to="/">Home</Link>
                 <Link to="/archive">Archive</Link>
-                <li>Important</li>
+                <Link to="/important">Important</Link>
                 <li>Bin</li>
             </ul>
         </div>

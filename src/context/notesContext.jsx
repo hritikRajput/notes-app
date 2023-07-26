@@ -8,10 +8,11 @@ const NotesProvider = (props) => {
   const [notes, setNotes] = React.useState([]);
   const [pinnedNotes, setPinnedNotes] = React.useState([]);
   const [archiveNotes, setArchiveNotes] = React.useState([]);
+  const [importantNotes, setImportantNotes] = React.useState([]);
 
   return (
     <NotesContext.Provider
-      value={{ title, setTitle, description, setDescription, notes, setNotes, pinnedNotes, setPinnedNotes, archiveNotes, setArchiveNotes }}
+      value={{ title, setTitle, description, setDescription, notes, setNotes, pinnedNotes, setPinnedNotes, archiveNotes, setArchiveNotes, importantNotes, setImportantNotes }}
     >
       {props.children}
     </NotesContext.Provider>

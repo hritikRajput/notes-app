@@ -4,8 +4,10 @@ import plus from "../../assets/plus-solid.svg"
 import { useNotes } from "../../context/notesContext"
 import { v4 as uuid } from "uuid";
 
-export default function NewNote() {
-    const { title, setTitle, description, setDescription, notes, setNotes } = useNotes()
+export default function NewNote(props) {
+    const { title, setTitle, description, setDescription, notes, setNotes, importantNotes, setImportantNotes } = useNotes()
+    const { isImportant } = props
+
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
     }
@@ -14,7 +16,13 @@ export default function NewNote() {
     }
 
     const handleClick = () => {
-        setNotes([...notes, { id: uuid(), title, description }])
+        if (isImportant) {
+            setImportantNotes([...importantNotes, { id: uuid(), title, description }])
+        }
+        else {
+            setNotes([...notes, { id: uuid(), title, description }])
+        }
+
         setTitle("")
         setDescription("")
     }
