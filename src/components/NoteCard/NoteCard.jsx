@@ -1,5 +1,6 @@
 import React from "react"
 import archive from "../../assets/archive.svg"
+import unarchive from "../../assets/unarchive.svg"
 import pinned from "../../assets/pinned.svg"
 import unpinned from "../../assets/unpinned.svg"
 import remove from "../../assets/trash.svg"
@@ -14,6 +15,11 @@ export default function NoteCard(props) {
         return pinnedNotes.some(note => note.id === id)
     }
     const isPinned = checkIsPinned(pinnedNotes, id)
+
+    function checkIsArchived(archiveNotes, id) {
+        return archiveNotes.some(note => note.id === id)
+    }
+    const isArchived = checkIsArchived(archiveNotes, id)
 
     function handleDelete(id) {
         const filteredArray = notes.filter((note) => {
@@ -58,13 +64,13 @@ export default function NoteCard(props) {
         <div className="notecard">
             <div className="notecard__title-row">
                 <h2>{title}</h2>
-                <span className="notecard__img"><img src={isPinned ? pinned : unpinned} onClick={() => isPinned ? handlePinned(id) : handleUnPinned(id)} /></span>
+                {!isArchived && <span className="notecard__img"><img src={isPinned ? pinned : unpinned} onClick={() => isPinned ? handlePinned(id) : handleUnPinned(id)} /></span>}
             </div>
             <div className="notecard__description-row">
                 <p>{description}</p>
             </div>
             <div className="notecard__options-row">
-                <span className="notecard__img"><img src={archive} onClick={() => handleArchiveClick(id)} /></span>
+                <span className="notecard__img"><img src={isArchived ? archive : unarchive} onClick={() => handleArchiveClick(id)} /></span>
                 <span className="notecard__img"><img src={remove} onClick={() => handleDelete(id)} /></span>
             </div>
         </div>
