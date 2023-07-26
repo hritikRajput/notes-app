@@ -22,10 +22,24 @@ export default function NoteCard(props) {
     const isArchived = checkIsArchived(archiveNotes, id)
 
     function handleDelete(id) {
-        const filteredArray = notes.filter((note) => {
-            return note.id !== id;
-        })
-        setNotes(filteredArray)
+        if (isArchived) {
+            const filteredArray = archiveNotes.filter((note) => {
+                return note.id !== id;
+            })
+            setArchiveNotes(filteredArray)
+        }
+        else if (isPinned) {
+            const filteredArray = pinnedNotes.filter((note) => {
+                return note.id !== id;
+            })
+            setPinnedNotes(filteredArray)
+        }
+        else {
+            const filteredArray = notes.filter((note) => {
+                return note.id !== id;
+            })
+            setNotes(filteredArray)
+        }
     }
 
     function handleUnPinned(id) {
