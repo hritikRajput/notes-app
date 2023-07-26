@@ -9,7 +9,7 @@ export default function Archive() {
         <div>
             <Header />
             <Sidebar />
-            <h2>Archive Notes</h2>
+            {archiveNotes.length > 0 && <h2>Archive Notes</h2>}
             {
                 archiveNotes.map(note => (<NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />))
             }

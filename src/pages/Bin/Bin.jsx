@@ -10,7 +10,7 @@ export default function Bin() {
             <Header />
             <Sidebar />
             <div>
-                <h2>Deleted Notes</h2>
+                {deletedNotes.length > 0 && <h2>Deleted Notes</h2>}
                 {
                     deletedNotes.map(note => <NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />)
                 }

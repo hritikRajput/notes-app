@@ -14,7 +14,7 @@ export default function Important() {
             <Sidebar />
             <NewNote isImportant={isImportant} />
             <div>
-                <h2>Important Notes</h2>
+                {importantNotes.length > 0 && <h2>Important Notes</h2>}
                 {
                     importantNotes.map(note => <NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />)
                 }
