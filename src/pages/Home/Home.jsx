@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Header />
       <div className="home__grid-container">
-        <Sidebar />
+        <Sidebar className="sidebar" />
         <NewNote />
         <div>
           {pinnedNotes.length > 0 && <h2>Pinned Notes</h2>}
