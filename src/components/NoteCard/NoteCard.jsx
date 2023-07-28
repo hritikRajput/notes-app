@@ -108,7 +108,14 @@ export default function NoteCard(props) {
         setNotes([...notes, { title, description, id }])
     }
     function handleArchiveClick(id) {
-        if (isPinned) {
+        if (isArchived) {
+            const filteredArray = archiveNotes.filter((note) => {
+                return note.id !== id;
+            })
+            setArchiveNotes(filteredArray)
+            setNotes([...notes, { title, description, id }])
+        }
+        else if (isPinned) {
             const filteredArray = pinnedNotes.filter((note) => {
                 return note.id !== id;
             })
