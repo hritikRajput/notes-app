@@ -1,0 +1,29 @@
+.bin__grid-container{
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+}
+
+.header{
+    grid-column: 1/3;
+}
+
+.sidebar{
+    grid-column: 1/2;
+}
+
+.bin__notecard-container{
+    grid-column-start: 2;
+    padding: 16px 32px;
+}
+.bin__notecard{
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+}
+
+.no-notes{
+    margin-top: 2rem;
+}
