@@ -1,14 +1,14 @@
 import "./Sidebar.css"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 export default function Sidebar() {
     return (
         <div className="sidebar">
-            <ul>
-                <Link to="/">Home</Link>
-                <Link to="/archive">Archive</Link>
-                <Link to="/important">Important</Link>
-                <Link to="/bin">Bin</Link>
-            </ul>
+            <NavLink to="/" className={({ isActive }) => `${isActive ? "active-link" : ""} link`} >Home</NavLink>
+            <NavLink to="/archive" className={({ isActive }) => `${isActive ? "active-link" : ""} link`}>Archive</NavLink>
+            <NavLink to="/important" className={({ isActive }) => `${isActive ? "active-link" : ""} link`}>Important</NavLink>
+            <NavLink to="/bin" className={({ isActive }) => `${isActive ? "active-link" : ""} link`}>Bin</NavLink>
         </div>
     )
 }
+
+

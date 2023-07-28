@@ -1,3 +1,22 @@
 .sidebar{
+    padding: 16px;
     background: #c8d5ff;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar .link{
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 8px 16px;
+}
+
+.sidebar .link:hover{
+    background: #72b5ed;
+    border-radius: 0 2rem 2rem 0;
+}
+.active-link{
+    background: #72b5ed;
+    border-radius: 0 2rem 2rem 0;
 }
