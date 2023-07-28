@@ -4,20 +4,23 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import NewNote from "../../components/NewNote/NewNote";
 import NoteCard from "../../components/NoteCard/NoteCard";
 import { useNotes } from "../../context/notesContext"
+import "./Important.css"
 
 export default function Important() {
     const [isImportant, setIsImportant] = React.useState(true)
     const { importantNotes } = useNotes()
     return (
-        <div>
-            <Header />
-            <Sidebar />
+        <div className="important__grid-container">
+            <Header className="header" />
+            <Sidebar className="sidebar" />
             <NewNote isImportant={isImportant} />
-            <div>
+            <div className="important__notes-container" >
                 {importantNotes.length > 0 && <h2>Important Notes</h2>}
-                {
-                    importantNotes.map(note => <NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />)
-                }
+                <div className="important__notecard">
+                    {
+                        importantNotes.map(note => <NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />)
+                    }
+                </div>
             </div>
         </div>
     );
