@@ -13,17 +13,23 @@ export default function Home() {
       <div className="home__grid-container">
         <Sidebar className="sidebar" />
         <NewNote />
-        <div>
-          {pinnedNotes.length > 0 && <h2>Pinned Notes</h2>}
-          {
-            pinnedNotes.map(note => <NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />)
-          }
-        </div>
-        <div>
-          {notes.length > 0 && <h2>Other Notes</h2>}
-          {
-            notes.map(note => <NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />)
-          }
+        <div className="home__notes-container">
+          <div>
+            {pinnedNotes.length > 0 && <h2>Pinned Notes</h2>}
+            <div className="home__notecard">
+              {
+                pinnedNotes.map(note => <NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />)
+              }
+            </div>
+          </div>
+          <div>
+            {notes.length > 0 && <h2>Other Notes</h2>}
+            <div className="home__notecard">
+              {
+                notes.map(note => <NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />)
+              }
+            </div>
+          </div>
         </div>
       </div>
     </div>
