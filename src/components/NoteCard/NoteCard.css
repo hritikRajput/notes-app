@@ -13,6 +13,11 @@
 .notecard__description-row{
     padding: 8px 0;
 }
+.notecard__description {
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+  }
 .notecard__options-row{
     display: flex;
     justify-content: end;

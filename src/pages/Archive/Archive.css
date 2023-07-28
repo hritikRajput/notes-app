@@ -1,0 +1,21 @@
+.archive__grid-container{
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+}
+
+.archive__notecard-container{
+    padding: 16px;
+}
+.archive__notecard{
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+}
+
+.no-notes{
+    margin-top: 2rem;
+}

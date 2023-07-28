@@ -133,7 +133,7 @@ export default function NoteCard(props) {
                 {(!isArchived && !isImportant && !isDeleted) && <span className="notecard__img"><img src={isPinned ? pinned : unpinned} onClick={() => isPinned ? handlePinned(id) : handleUnPinned(id)} /></span>}
             </div>
             <div className="notecard__description-row">
-                <p>{description}</p>
+                <p className="notecard__description">{description}</p>
             </div>
             <div className="notecard__options-row">
                 {(!isImportant && !isDeleted) && <span className="notecard__img"><img src={isArchived ? archive : unarchive} onClick={() => handleArchiveClick(id)} /></span>}
