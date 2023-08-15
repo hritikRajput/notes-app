@@ -132,6 +132,7 @@ export default function NoteCard(props) {
     }
 
 
+
     return (
         <div className="notecard">
             <div className="notecard__title-row">
@@ -146,6 +147,7 @@ export default function NoteCard(props) {
                 {(!isImportant && !isDeleted) && <span className="notecard__img"><img src={isArchived ? archive : unarchive} onClick={() => handleArchiveClick(id)} /></span>}
                 <span className="notecard__img"><img src={remove} onClick={() => handleDelete(id)} /></span>
             </div>
+
         </div>
     )
 }
