@@ -52,3 +52,8 @@
     background: #c38d9e;
     transform: scale(1.1);
 }
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+}
