@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <div className="home__grid-container">
+      <div className="home home__grid-container">
         <Sidebar className="sidebar" />
         <NewNote />
         <div className="home__notes-container">

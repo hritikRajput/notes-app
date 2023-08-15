@@ -1,14 +1,26 @@
 import React from "react"
+import Modal from "../Modal/Modal";
 import archive from "../../assets/archive.svg"
 import unarchive from "../../assets/unarchive.svg"
 import pinned from "../../assets/pinned.svg"
 import unpinned from "../../assets/unpinned.svg"
 import remove from "../../assets/trash.svg"
 import restore from "../../assets/untrash.svg"
+import eye from "../../assets/eye.svg"
 import "./NoteCard.css"
 import { useNotes } from "../../context/notesContext"
 
 export default function NoteCard(props) {
+    const [isModalVisible, setModalVisible] = React.useState(false);
+
+    const openModal = () => {
+        setModalVisible(true);
+    };
+
+    const closeModal = () => {
+        setModalVisible(false);
+    };
+
     const { title, description, id } = props
     const { notes, setNotes, pinnedNotes, setPinnedNotes, archiveNotes, setArchiveNotes, importantNotes, setImportantNotes, deletedNotes, setDeletedNotes } = useNotes()
 
@@ -136,6 +148,7 @@ export default function NoteCard(props) {
     return (
         <div className="notecard">
             <div className="notecard__title-row">
+                {/* Modal--------- */}
                 <h2>{title}</h2>
                 {isDeleted && <span className="notecard__img"><img src={restore} onClick={() => restoreDelete(id)} /></span>}
                 {(!isArchived && !isImportant && !isDeleted) && <span className="notecard__img"><img src={isPinned ? pinned : unpinned} onClick={() => isPinned ? handlePinned(id) : handleUnPinned(id)} /></span>}
@@ -144,9 +157,17 @@ export default function NoteCard(props) {
                 <p className="notecard__description">{description}</p>
             </div>
             <div className="notecard__options-row">
+                <span className="notecard__img"><img src={eye} onClick={openModal} /></span>
                 {(!isImportant && !isDeleted) && <span className="notecard__img"><img src={isArchived ? archive : unarchive} onClick={() => handleArchiveClick(id)} /></span>}
                 <span className="notecard__img"><img src={remove} onClick={() => handleDelete(id)} /></span>
             </div>
+            {isModalVisible && (
+                <Modal
+                    title={title}
+                    description={description}
+                    onClose={closeModal}
+                />
+            )}
 
         </div>
     )

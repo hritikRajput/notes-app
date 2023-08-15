@@ -15,9 +15,15 @@
     padding: 8px 0;
 }
 .notecard__description {
-    
+    width: calc(100%);
+    height: 60px;
+    overflow: hidden;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 .notecard__options-row{
+    margin-bottom: 0;
     display: flex;
     justify-content: flex-end;
 }
