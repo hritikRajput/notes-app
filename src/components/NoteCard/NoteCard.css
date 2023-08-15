@@ -11,6 +11,10 @@
     padding-bottom: 8px;
     border-bottom: 2px solid #101010;
 }
+.notecard__title-row h2{
+    font-size: 1.4rem;
+}
+
 .notecard__description-row{
     padding: 8px 0;
 }
