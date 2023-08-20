@@ -1,7 +1,7 @@
 import "./Modal.css";
+import PropTypes from "prop-types"
 
 export default function Modal({ title, description, onClose }) {
-    { console.log("I am in Modal") }
     return (
         <div className="modal-container">
             <div className="modal">
@@ -11,4 +11,10 @@ export default function Modal({ title, description, onClose }) {
             </div>
         </div>
     );
+}
+
+Modal.propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string,
+    onClose: PropTypes.func,
 }

@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types';
 import Modal from "../Modal/Modal";
 import archive from "../../assets/archive.svg"
 import unarchive from "../../assets/unarchive.svg"
@@ -148,7 +149,7 @@ export default function NoteCard(props) {
     return (
         <div className="notecard">
             <div className="notecard__title-row">
-                {/* Modal--------- */}
+
                 <h2>{title}</h2>
                 {isDeleted && <span className="notecard__img"><img src={restore} onClick={() => restoreDelete(id)} /></span>}
                 {(!isArchived && !isImportant && !isDeleted) && <span className="notecard__img"><img src={isPinned ? pinned : unpinned} onClick={() => isPinned ? handlePinned(id) : handleUnPinned(id)} /></span>}
@@ -161,6 +162,7 @@ export default function NoteCard(props) {
                 {(!isImportant && !isDeleted) && <span className="notecard__img"><img src={isArchived ? archive : unarchive} onClick={() => handleArchiveClick(id)} /></span>}
                 <span className="notecard__img"><img src={remove} onClick={() => handleDelete(id)} /></span>
             </div>
+            {/* Modal--------- */}
             {isModalVisible && (
                 <Modal
                     title={title}
@@ -171,4 +173,11 @@ export default function NoteCard(props) {
 
         </div>
     )
+}
+
+
+NoteCard.propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string,
+    id: PropTypes.string,
 }
