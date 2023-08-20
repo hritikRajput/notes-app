@@ -16,11 +16,12 @@
     background: #fff;
     padding: 30px 50px;
     border-radius: 4px;
-    width: 600px;
-    max-width: 100%;
+    width: 400px;
+    max-width: 600px;
     max-height: 80%;
     overflow: auto;
-    position: relative;
+    position: relative; 
+    max-height: 80vh; 
 }
 
 .modal h1 {
@@ -33,6 +34,7 @@
     margin-top: 10px;
     opacity: 0.8;
     font-size: 1rem;
+    word-wrap: break-word;
 }
 
 .modal button {
@@ -50,7 +52,7 @@
     background-color: #0056b3;
 }
 
-.modal div.close {
+.modal .close {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -65,7 +67,7 @@
     font-size: 24px;
 }
 
-.modal div.close:hover {
+.modal .close:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
