@@ -49,7 +49,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-.newnote__plus:hover{
+.newnote__plus:active{
     background: #c38d9e;
     transform: scale(1.1);
 }
@@ -63,4 +63,5 @@
   .newnote{
     max-width: 80vw;
   }  
+
 }
