@@ -8,13 +8,13 @@ import { useNotes } from "../../context/notesContext"
 export default function Home() {
   const { notes, pinnedNotes } = useNotes()
   return (
-    <div>
+    <div className="home">
       <Header />
-      <div className="home home__grid-container">
-        <Sidebar className="sidebar" />
+      <div className="home__grid-container">
+        <Sidebar />
         <NewNote />
         <div className="home__notes-container">
-          <div>
+          <div className="pinned-notes">
             {pinnedNotes.length > 0 && <h2>Pinned Notes</h2>}
             <div className="home__notecard">
               {
@@ -22,7 +22,7 @@ export default function Home() {
               }
             </div>
           </div>
-          <div>
+          <div className="other-notes">
             {notes.length > 0 && <h2>Other Notes</h2>}
             <div className="home__notecard">
               {

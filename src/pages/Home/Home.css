@@ -4,7 +4,6 @@
 }
 .home__notes-container{
     grid-column-start: 2;
-    padding: 16px 32px;
 }
 .home__notecard{
     width: 100%;
@@ -14,3 +13,22 @@
     gap: 16px;
 }
 
+@media screen and (max-width: 768px) {
+    .home__grid-container{
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    .home__notes-container{
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+    .pinned-notes h2, .other-notes h2{
+       text-align: center;
+    }
+    .home__notecard{
+        width: 80%;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+  }

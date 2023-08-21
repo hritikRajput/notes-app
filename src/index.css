@@ -7,6 +7,8 @@
 }
 
 body{
+  min-height: 100vh;
+  width: 100%;
   font-family: 'Karla', sans-serif;
   background-color: #eee;
   color: #101010;

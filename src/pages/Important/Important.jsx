@@ -10,16 +10,20 @@ export default function Important() {
     const [isImportant, setIsImportant] = React.useState(true)
     const { importantNotes } = useNotes()
     return (
-        <div className="important__grid-container">
-            <Header className="header" />
-            <Sidebar className="sidebar" />
-            <NewNote isImportant={isImportant} />
-            <div className="important__notes-container" >
-                {importantNotes.length > 0 && <h2>Important Notes</h2>}
-                <div className="important__notecard">
-                    {
-                        importantNotes.map(note => <NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />)
-                    }
+        <div className="important">
+            <Header />
+            <div className="important__grid-container">
+                <Sidebar />
+                <NewNote isImportant={isImportant} />
+                <div className="important__notes-container" >
+                    <div className="important-notes">
+                        {importantNotes.length > 0 && <h2>Important Notes</h2>}
+                        <div className="important__notecard">
+                            {
+                                importantNotes.map(note => <NoteCard key={note.id} title={note.title} description={note.description} id={note.id} />)
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

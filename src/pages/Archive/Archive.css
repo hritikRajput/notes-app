@@ -5,7 +5,6 @@
 
 .archive__notecard-container{
     grid-column-start: 2;
-    padding: 16px 32px;
 }
 .archive__notecard{
     width: 100%;
@@ -19,3 +18,23 @@
 .no-notes{
     margin-top: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+    .archive__grid-container{
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    .archive__notecard-container{
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+    .archive__notecard-container h2,p{
+        text-align: center;
+    }
+    .archive__notecard{
+        width: 80%;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+  }
