@@ -48,4 +48,4 @@ Start the server
 
 ![Preview](public/papertrail-desktop.png)
 <br>
-![Preview](public/papertrail-mobile.png)
+![Preview](public/papertrail-mobile.png | width = 400)
