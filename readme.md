@@ -12,7 +12,9 @@ PaperTrail is a powerful and versatile note-taking app designed to help you stay
 
 ## Tech Stack
 
-**Client:** React, Javascript, CSS, HTML
+**Client:** Crafted using React, Javascript, CSS, and HTML for a seamless and interactive user experience.
+
+**Data Storage:** Employed local storage to ensure your notes are securely stored and swiftly retrievable.
 
 ## Live Link
 
