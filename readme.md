@@ -1,8 +1,6 @@
 # PaperTrail - Note-taking app
 
 PaperTrail is a powerful and versatile note-taking app designed to help you stay organized and productive.
-![Preview](public/papertrail-desktop.png)
-![Preview](public/papertrail-mobile.png)
 
 ## Features
 
@@ -45,3 +43,9 @@ Start the server
 ```bash
   npm run dev
 ```
+
+## Screenshots
+
+![Preview](public/papertrail-desktop.png)
+<br>
+![Preview](public/papertrail-mobile.png)
