@@ -46,6 +46,7 @@ Start the server
 
 ## Screenshots
 
-![Preview](public/papertrail-desktop.png)
+<img src="public/papertrail-desktop.png" alt="Preview Desktop version"/>
 <br>
-![Preview](public/papertrail-mobile.png | width = 400)
+<br>
+<img src="public/papertrail-mobile.png" alt="Preview mobile version" width="400"/>
