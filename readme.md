@@ -1,6 +1,8 @@
 # PaperTrail - Note-taking app
 
-PaperTrail is a powerful and versatile note-taking app designed to help you stay organized and productive. Whether you're a student, a professional, or someone who loves jotting down ideas, PaperTrail has covered you.
+PaperTrail is a powerful and versatile note-taking app designed to help you stay organized and productive.
+![Preview](public/papertrail-desktop.png)
+![Preview](public/papertrail-mobile.png)
 
 ## Features
 
